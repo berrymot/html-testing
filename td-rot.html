@@ -1,25 +1,22 @@
 <style>
   :is(th, td).r {
     transform: rotate(180deg);
-    vertical-align: top;
   }
   :is(th, td).r span {
     writing-mode: vertical-rl;
   }
+  tr:first-child th.r {
+    vertical-align: top;
+  }
 </style>
 <table>
   <tr>
-    <th class=r><span>the</span></th>
-    <th class=r><span>asdf</span></th>
-    <th class=r><span>very long thing</span></th>
+    <th class=r><span>thing1</span></th>
+    <th class=r><span>thing2</span></th>
+    <th class=r><span>number of</span></th>
   </tr>
   <tr>
-    <td>h</td>
-    <td>7.2</td>
-    <td>sgfsdjfk</td>
-  </tr>
-  <tr>
-    <td class=r rowspan=2><span>the solar system</span></td>
+    <td class=r rowspan=2><span>solar system</span></td>
     <td>the sun</td>
     <td>1</td>
   </tr>
@@ -39,7 +36,7 @@
 :is(th, td).r span {
   writing-mode: vertical-rl; /* `vertical-lr` also works unless you want linebreaks to work properly */
 }
-th {
+tr:first-child th.r {
   vertical-align: top; /* yes, `top` (because it's rotated) */
 }</pre></blockquote>
 
