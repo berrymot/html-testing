@@ -25,7 +25,7 @@
     transform: rotate(180deg);
   }
   :is(th, td).r span {
-    writing-mode: vertical-rl;
+    writing-mode: vertical-rl; /* -lr also works unless you want linebreaks to work properly */
   }
 &lt;/style>
 
@@ -36,8 +36,9 @@
   &lt;/tr>
 &lt;/table></pre>
 
-<h2>drawbacks</h2>
+<h2>notes and drawbacks</h2>
 <ul>
   <li>does not work on mobile</li>
   <li>may subtly affect backgrounds and borders</li>
+  <li>you could <i>in theory</i> make it work for 45° angles too? maybe?</li>
 </ul>
