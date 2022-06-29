@@ -2,18 +2,36 @@
   td {
     border: 1px solid black;
   }
-  /* thanks inspect element */
-  td.r {
+  :is(th, td).r {
     transform: rotate(180deg);
   }
-  td.r span {
+  :is(th, td).r span {
     writing-mode: vertical-rl;
   }
 </style>
-
 <table>
   <tr>
-    <td class=r><span>rotate?</span></td>
-    <td>no</td>
+    <td class=r><span>rotatde</span></td>
+    <td>not rotated</td>
   </tr>
 </table>
+<hr/>
+<h2>how to do that ↑</h2>
+<pre>&lt;style>
+  td {
+    border: 1px solid black; /* optional */
+  }
+  :is(th, td).r {
+    transform: rotate(180deg);
+  }
+  :is(th, td).r span {
+    writing-mode: vertical-rl;
+  }
+&lt;/style>
+
+&lt;table>
+  &lt;tr>
+    &lt;td class=r>&lt;span>rotated&lt;/span>&lt;/td>
+    &lt;td>not rotated&lt;/td>
+  &lt;/tr>
+&lt;/table></pre>
