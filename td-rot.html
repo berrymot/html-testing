@@ -1,9 +1,7 @@
 <style>
-  td {
-    border: 1px solid black;
-  }
   :is(th, td).r {
     transform: rotate(180deg);
+    vertical-align: top;
   }
   :is(th, td).r span {
     writing-mode: vertical-rl;
@@ -32,20 +30,22 @@
 </table>
 <hr/>
 <h2>how to do that ↑</h2>
-<p>give your table cells a class of <code>r</code> and surround their contents with a span, then add this css:</p>
-<blockquote><pre>td {
-  border: 1px solid black; /* optional */
-}
-:is(th, td).r {
+<p>give your table cells a class of <code>r</code> and surround their contents with a span ...</p>
+<blockquote><pre>&lt;th class=r>&lt;span>stuff&lt;/span>&lt;/th></pre></blockquote>
+<p>... and then add this css.</p>
+<blockquote><pre>:is(th, td).r {
   transform: rotate(180deg);
 }
 :is(th, td).r span {
-  writing-mode: vertical-rl; /* -lr also works unless you want linebreaks to work properly */
+  writing-mode: vertical-rl; /* `vertical-lr` also works unless you want linebreaks to work properly */
+}
+th {
+  vertical-align: top; /* yes, `top` (because it's rotated) */
 }</pre></blockquote>
 
 <h2>notes and drawbacks</h2>
 <ul>
-  <li>does not work on mobile</li>
+  <li>does not work on mobile - the cells become really narrow and the text overflows to the left</li>
   <li>may subtly affect backgrounds and borders</li>
-  <li>you could <i>in theory</i> make it work for 45° angles too? maybe? haven't tried yet</li>
+  <li>lines don't wrap unless you add explicit linebreaks (or set a max-height maybe)</li>
 </ul>
