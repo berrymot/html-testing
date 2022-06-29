@@ -11,34 +11,26 @@
 </style>
 <table>
   <tr>
-    <td class=r><span>rotated</span></td>
-    <td>not rotated</td>
+    <th class=r><span>asdf</span></th>
+    <th class=r><span>ghjk</span></th>
   </tr>
 </table>
 <hr/>
 <h2>how to do that ↑</h2>
-<pre>&lt;style>
-  td {
-    border: 1px solid black; /* optional */
-  }
-  :is(th, td).r {
-    transform: rotate(180deg);
-  }
-  :is(th, td).r span {
-    writing-mode: vertical-rl; /* -lr also works unless you want linebreaks to work properly */
-  }
-&lt;/style>
-
-&lt;table>
-  &lt;tr>
-    &lt;td class=r>&lt;span>rotated&lt;/span>&lt;/td>
-    &lt;td>not rotated&lt;/td>
-  &lt;/tr>
-&lt;/table></pre>
+<p>give your table cells a class of <code>r</code> and surround their contents with a span, then add this css:</p>
+<blockquote><pre>td {
+  border: 1px solid black; /* optional */
+}
+:is(th, td).r {
+  transform: rotate(180deg);
+}
+:is(th, td).r span {
+  writing-mode: vertical-rl; /* -lr also works unless you want linebreaks to work properly */
+}</pre></blockquote>
 
 <h2>notes and drawbacks</h2>
 <ul>
   <li>does not work on mobile</li>
   <li>may subtly affect backgrounds and borders</li>
-  <li>you could <i>in theory</i> make it work for 45° angles too? maybe?</li>
+  <li>you could <i>in theory</i> make it work for 45° angles too? maybe? haven't tried yet</li>
 </ul>
