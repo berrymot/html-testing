@@ -37,12 +37,12 @@
   writing-mode: vertical-rl; /* `vertical-lr` also works unless you want linebreaks to work properly */
 }
 tr:first-child th.r {
-  vertical-align: top; /* yes, `top` (because it's rotated) */
+  vertical-align: top; /* yes, `top` (because it's rotated). optional but recommended */
 }</pre></blockquote>
 
 <h2>notes and drawbacks</h2>
 <ul>
-  <li>does not work on mobile - the cells become really narrow and the text overflows to the left</li>
+  <li>does not work properly in ios safari</li>
   <li>may subtly affect backgrounds and borders</li>
-  <li>lines don't wrap unless you add explicit linebreaks (or set a max-height maybe)</li>
+  <li>lines don't wrap unless you add explicit linebreaks (or set a max-height maybe). except they <i>do</i> wrap on mobile. what the heck</li>
 </ul>
