@@ -1,10 +1,13 @@
 <style>
   div.body, div.list { text-align: center; }
+  div.body { margin-left: 10vw; margin-right: 10vw; }
+
   div.list {
     margin: 1em auto;
   }
   li {
-    display: inline-block;
+    width: max-content;
+    max-width: calc(80vw - 40px); /* 100vw - side margins - default list padding */
   }
 </style>
 
