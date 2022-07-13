@@ -1,6 +1,6 @@
 <style>
   div.body, div.list { text-align: center; }
-  ul, ol, dl {
+  :not(li, dd) :is(ul, ol, dl) { /* selects all non-nested lists */
     display: inline-block;
     text-align: left;
   }
