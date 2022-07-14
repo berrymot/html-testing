@@ -1,0 +1,19 @@
+<style>
+  .spoiler {
+    color: transparent;
+    text-shadow: 0 0 5px #000; /* blurs it. change color to whatever you want */
+  }
+</style>
+
+<p>aspen is currently <b>(cw: nsfw)</b> <span class=spoiler>doing your mother</span></p>
+<p>click to show/hide the spoiler</p>
+
+<!-- put this at bottom of page -->
+<script>
+  const blocks = document.querySelectorAll(".spoiler");
+  for (var i = 0; i < blocks.length; i++) {
+    blocks[i].addEventListener("click", function() {
+      this.classList.toggle("spoiler");
+    });
+  }
+</script>
