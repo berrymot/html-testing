@@ -1,7 +1,14 @@
 <style>
   .spoiler {
+    transition: all 0.25s; /* optional */
     color: transparent;
     text-shadow: 0 0 10px #000; /* blurs it. change color to whatever you want */
+    user-select: none;
+  }
+  .spoiler.open {
+    color: black; /* again, change color to whatever */
+    text-shadow: none;
+    user-select: unset;
   }
 </style>
 
@@ -13,7 +20,7 @@
   const blocks = document.querySelectorAll(".spoiler");
   for (var i = 0; i < blocks.length; i++) {
     blocks[i].addEventListener("click", function() {
-      this.classList.toggle("spoiler");
+      this.classList.toggle("open");
     });
   }
 </script>
@@ -23,5 +30,5 @@
 
 <h2>notes and drawbacks</h2>
 <ul>
-  <li>still selectable in some browsers (chrome, etc) which sort of defeats the purpose</li>
+  <li>still selectable in webkit which sort of defeats the purpose</li>
 </ul>
